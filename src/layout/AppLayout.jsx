@@ -13,7 +13,7 @@ function AppLayout() {
   return (
     <div className="app-layout">
       <header>
-        <div class="container">
+        <div className="container">
           <span className="brand-logo">User Management</span>
           <nav className="main-nav">
             <button
