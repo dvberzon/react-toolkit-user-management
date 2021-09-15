@@ -1,5 +1,6 @@
 import Modal from 'components/modal/Modal';
 import React, { useState } from 'react';
+import UserForm from './UserForm';
 
 function AddUserButton() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -16,7 +17,7 @@ function AddUserButton() {
         <Modal
           closeModal={() => setModalOpen(false)}
         >
-          <h2>Add User</h2>
+          <UserForm />
         </Modal>
       )}
     </>
