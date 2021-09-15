@@ -1,0 +1,30 @@
+header {
+  background-color: #ddd;
+  height: 50px;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header nav.main-nav {
+  margin-left: 24px;
+}
+
+header nav.main-nav button {
+  border: solid 1px #bbb;
+  background-color: white;
+  margin-right: 10px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
