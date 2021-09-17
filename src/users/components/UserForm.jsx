@@ -1,12 +1,25 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addUserAction } from 'users/redux/usersActions';
 
 function UserForm ({
   user,
+  closeModal,
 }) {
   const [firstName, setFirstName] = useState(user ? user.firstName : '');
   const [lastName, setLastName] = useState(user ? user.lastName : '');
   const [email, setEmail] = useState(user ? user.email : '');
   const [bio, setBio] = useState(user ? user.bio : '');
+  const dispatch = useDispatch();
+  const submitForm = () => {
+    const user = {
+      firstName,
+      lastName,
+      email,
+      bio,
+    };
+    dispatch(addUserAction(user)).then(closeModal);
+  }
   return (
     <div className="user-form">
       <p>
@@ -39,6 +52,10 @@ function UserForm ({
       <p>
         <label htmlFor="bio">Biography:</label>
         <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
+      </p>
+      <p>
+        <button type="button" onClick={closeModal}>Cancel</button>
+        <button type="button" onClick={submitForm}>Submit</button>
       </p>
     </div>
   )

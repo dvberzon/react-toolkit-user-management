@@ -4,6 +4,7 @@ import UserForm from './UserForm';
 
 function AddUserButton() {
   const [modalOpen, setModalOpen] = useState(false);
+  const closeModal = () => setModalOpen(false)
   return (
     <>
       <button
@@ -15,9 +16,11 @@ function AddUserButton() {
       </button>
       {modalOpen && (
         <Modal
-          closeModal={() => setModalOpen(false)}
+          closeModal={closeModal}
         >
-          <UserForm />
+          <UserForm
+            closeModal={closeModal}
+          />
         </Modal>
       )}
     </>
