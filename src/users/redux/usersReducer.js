@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { addUserAction, fetchUsersAction } from './usersActions';
+import { addUserAction, deleteUserAction, fetchUsersAction, updateUserAction } from './usersActions';
 
 const initialState = {
   userIds: [],
@@ -37,11 +37,37 @@ function addUserFulfilled(state, action) {
   })
 }
 
+function updateUserFulfilled(state, action) {
+  const user = action.payload;
+  const { id } = user;
+  const usersById = {
+    ...state.usersById,
+    [id]: user,
+  }
+  return ({
+    ...state,
+    usersById,
+  });
+}
+
+function deleteUserFulfilled(state, action) {
+  const userId = action.payload;
+  const newUserIds = state.userIds.filter((id) => id !== userId);
+  const newUsersById = {...state.usersById}
+  delete newUsersById[userId];
+  return ({
+    userIds: newUserIds,
+    usersById: newUsersById,
+  });
+}
+
 export const usersReducer = createReducer(
   initialState,
   (builder) => {
     builder
       .addCase(fetchUsersAction.fulfilled, fetchUsersFulfilled)
       .addCase(addUserAction.fulfilled, addUserFulfilled)
+      .addCase(updateUserAction.fulfilled, updateUserFulfilled)
+      .addCase(deleteUserAction.fulfilled, deleteUserFulfilled)
   }
 );

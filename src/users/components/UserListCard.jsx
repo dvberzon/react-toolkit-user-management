@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 import { userSelector } from 'users/redux/usersSelectors';
+import EditUserButton from './EditUserButton';
+import DeleteUserButton from './DeleteUserButton';
 
 function UserListCard({
   userId
@@ -13,6 +15,14 @@ function UserListCard({
       <p>First name: {firstName}</p>
       <p>Last name: {lastName}</p>
       <p>Email: {email}</p>
+      <p>
+        <EditUserButton
+          user={user}
+        />
+        <DeleteUserButton
+          user={user}
+        />
+      </p>
     </li>
   );
 }

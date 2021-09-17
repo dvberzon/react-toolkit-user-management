@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUserAction } from 'users/redux/usersActions';
+import { addUserAction, updateUserAction } from 'users/redux/usersActions';
 
 function UserForm ({
   user,
@@ -11,15 +11,20 @@ function UserForm ({
   const [email, setEmail] = useState(user ? user.email : '');
   const [bio, setBio] = useState(user ? user.bio : '');
   const dispatch = useDispatch();
+
   const submitForm = () => {
-    const user = {
+    const updatedUser = {
+      id: user ? user.id : null,
       firstName,
       lastName,
       email,
       bio,
     };
-    dispatch(addUserAction(user)).then(closeModal);
+    // action is edit or update depending on whether an existing user was passed in
+    const action = user ? updateUserAction : addUserAction;
+    dispatch(action(updatedUser)).then(closeModal);
   }
+
   return (
     <div className="user-form">
       <p>

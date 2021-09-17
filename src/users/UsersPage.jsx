@@ -17,6 +17,7 @@ function UsersPage() {
       <ul>
         {userIds && userIds.map((id) => (
           <UserListCard
+            key={id}
             userId={id}
           />
         ))}
