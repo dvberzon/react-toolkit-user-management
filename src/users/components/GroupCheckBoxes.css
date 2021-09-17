@@ -1,0 +1,15 @@
+.group-checkboxes ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.group-checkboxes ul li {
+  width: 50%;
+}
+
+.group-checkboxes ul li input {
+  margin-right: 8px;
+}

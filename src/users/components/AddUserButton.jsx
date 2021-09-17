@@ -6,10 +6,9 @@ function AddUserButton() {
   const [modalOpen, setModalOpen] = useState(false);
   const closeModal = () => setModalOpen(false)
   return (
-    <>
+    <div className="add-user-button">
       <button
         type="button"
-        className="add-user-button"
         onClick={() => setModalOpen(true)}
       >
         Add User
@@ -23,7 +22,7 @@ function AddUserButton() {
           />
         </Modal>
       )}
-    </>
+    </div>
   );
 }
 

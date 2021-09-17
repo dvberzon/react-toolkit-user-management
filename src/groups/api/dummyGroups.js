@@ -12,7 +12,12 @@ const dummyGroups = [
   {
     id: 3,
     name: 'Japan',
-    description: 'Japan'
+    description: 'Nippon'
+  },
+  {
+    id: 4,
+    name: 'Germany',
+    description: 'Deutchland',
   },
 ];
 

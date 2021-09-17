@@ -17,13 +17,13 @@ function AppLayout() {
           <span className="brand-logo">User Management</span>
           <nav className="main-nav">
             <button
-              className="nav-option"
+              className={`nav-option${currentTab === 'users' && ' active'}`}
               onClick={() => setCurrentTab('users')}
             >
               Users
             </button>
             <button
-              className="nav-option"
+              className={`nav-option${currentTab === 'groups' && ' active'}`}
               onClick={() => setCurrentTab('groups')}
             >
               Groups

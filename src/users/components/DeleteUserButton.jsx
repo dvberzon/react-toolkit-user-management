@@ -19,7 +19,7 @@ function DeleteUserButton({
         className="add-user-button"
         onClick={() => setAlertOpen(true)}
       >
-        Delete user
+        Delete
       </button>
       {alertOpen && (
         <Modal

@@ -14,7 +14,7 @@ function EditGroupButton({
         className="add-group-button"
         onClick={() => setModalOpen(true)}
       >
-        Edit Group
+        Edit
       </button>
       {modalOpen && (
         <Modal

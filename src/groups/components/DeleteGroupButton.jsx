@@ -19,7 +19,7 @@ function DeleteGroupButton({
         className="add-group-button"
         onClick={() => setAlertOpen(true)}
       >
-        Delete group
+        Delete
       </button>
       {alertOpen && (
         <Modal

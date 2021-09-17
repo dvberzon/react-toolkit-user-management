@@ -21,8 +21,9 @@
 .modal-card {
   position: relative;
   min-width: 320px;
+  max-height: 90vh;
+  overflow-x: auto;
   z-index: 10;
-  margin-bottom: 96px;
   background: white;
   border-radius: 16px;
   padding: 16px;

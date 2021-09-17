@@ -16,6 +16,12 @@ header .container {
   align-items: center;
 }
 
+header .brand-logo {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 32px;
+}
+
 header nav.main-nav {
   margin-left: 24px;
 }
@@ -27,4 +33,13 @@ header nav.main-nav button {
   font-size: 16px;
   padding: 8px 16px;
   border-radius: 8px;
+}
+
+header nav.main-nav button:hover {
+  background-color: #eee;
+}
+
+header nav.main-nav .active {
+  font-weight: bold;
+  border-color: #333;
 }

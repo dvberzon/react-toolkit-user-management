@@ -4,10 +4,15 @@ import { addGroupAction, deleteGroupAction, fetchGroupsAction, updateGroupAction
 const initialState = {
   groupIds: [],
   groupsById: {},
+  fetched: false,
 };
 
 // action handler functions
 function fetchGroupsFulfilled(state, action) {
+  // as the apis don't actually exist, we want to maintain local changes
+  // and not override with the dummy data each time we hit the groups tab
+  // so if we have already fetched the groups data, don't change the state
+  if (state.fetched) { return state };
   const groups = action.payload;
   const groupIds = groups.map((group) => group.id);
   const groupsById = groups.reduce((prevGroupsById, group) => ({
@@ -15,6 +20,8 @@ function fetchGroupsFulfilled(state, action) {
     [group.id]: group,
   }), {});
   return ({
+    ...state,
+    fetched: true,
     groupIds,
     groupsById,
   });
@@ -32,6 +39,7 @@ function addGroupFulfilled(state, action) {
     [id]: group,
   }
   return ({
+    ...state,
     groupIds,
     groupsById,
   })
@@ -56,6 +64,7 @@ function deleteGroupFulfilled(state, action) {
   const newGroupsById = {...state.groupsById}
   delete newGroupsById[groupIds];
   return ({
+    ...state,
     groupIds: newGroupIds,
     groupsById: newGroupsById,
   });

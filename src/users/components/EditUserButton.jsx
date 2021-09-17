@@ -14,7 +14,7 @@ function EditUserButton({
         className="add-user-button"
         onClick={() => setModalOpen(true)}
       >
-        Edit User
+        Edit
       </button>
       {modalOpen && (
         <Modal

@@ -22,7 +22,7 @@ function GroupForm ({
   }
 
   return (
-    <div className="group-form">
+    <div className="form">
       <p>
         <label htmlFor="firstName">Name:</label>
         <input
@@ -36,7 +36,7 @@ function GroupForm ({
         <label htmlFor="description">Description:</label>
         <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
       </p>
-      <p>
+      <p className="controls">
         <button type="button" onClick={closeModal}>Cancel</button>
         <button type="button" onClick={submitForm}>Submit</button>
       </p>

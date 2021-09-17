@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchGroupsAction } from 'groups/redux/groupsActions';
 import AddGroupButton from './components/AddGroupButton';
 import GroupListCard from './components/GroupListCard';
+import './GroupsPage.css';
 
 function GroupsPage() {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ function GroupsPage() {
     <>
       <h1>Groups</h1>
       <AddGroupButton />
-      <ul>
+      <ul className="groups-list">
         {groupIds && groupIds.map((id) => (
           <GroupListCard
             key={id}

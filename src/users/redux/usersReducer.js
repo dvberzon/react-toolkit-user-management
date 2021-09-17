@@ -4,10 +4,15 @@ import { addUserAction, deleteUserAction, fetchUsersAction, updateUserAction } f
 const initialState = {
   userIds: [],
   usersById: {},
+  fetched: false,
 };
 
 // action handler functions
 function fetchUsersFulfilled(state, action) {
+  // as the apis don't actually exist, we want to maintain local changes
+  // and not override with the dummy data each time we hit the users tab
+  // so if we have already fetched the users data, don't change the state
+  if (state.fetched) { return state };
   const users = action.payload;
   const userIds = users.map((user) => user.id);
   const usersById = users.reduce((prevUsersById, user) => ({
@@ -15,6 +20,8 @@ function fetchUsersFulfilled(state, action) {
     [user.id]: user,
   }), {});
   return ({
+    ...state,
+    fetched: true,
     userIds,
     usersById,
   });
@@ -32,6 +39,7 @@ function addUserFulfilled(state, action) {
     [id]: user,
   }
   return ({
+    ...state,
     userIds,
     usersById,
   })
@@ -56,6 +64,7 @@ function deleteUserFulfilled(state, action) {
   const newUsersById = {...state.usersById}
   delete newUsersById[userId];
   return ({
+    ...state,
     userIds: newUserIds,
     usersById: newUsersById,
   });

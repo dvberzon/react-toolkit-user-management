@@ -1,0 +1,46 @@
+.user-list-card {
+  padding: 8px 16px;
+  display: flex;
+  width: 100%;
+  border: solid 1px #efefef;
+  margin-bottom: 8px;
+}
+
+.user-list-card p {
+  margin: 0 0 8px;
+}
+
+.user-list-card p a {
+  color: #4c4c4c;
+}
+
+.user-list-card .name-email {
+  width: 200px;
+}
+
+.user-list-card .groups {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.user-list-card .groups ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-list-card .groups ul li {
+  background-color: #555;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: white;
+}
+
+.user-list-card .actions button {
+  padding: 4px;
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,14 @@
+ul.groups-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.add-group-button {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.add-group-button button {
+  margin-left: auto
+}

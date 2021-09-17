@@ -23,4 +23,3 @@ export const deleteUserAction = createAsyncThunk(
   'users/delete',
   (id) => deleteUser(id),
 );
-

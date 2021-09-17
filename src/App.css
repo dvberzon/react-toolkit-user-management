@@ -1,0 +1,54 @@
+button {
+  border: solid 1px #bbb;
+  background-color: white;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #eee;
+}
+
+.form p {
+  margin: 0 0 16px;
+}
+
+.form p.controls {
+  text-align: right;
+}
+
+.form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form input, .form textarea {
+  padding: 8px;
+  border-radius: 4px;
+  border: solid 1px #ccc;
+}
+
+
+.form button {
+  margin-right: 8px;
+}
+
+.alert h2 {
+  font-size: 16px;
+}
+
+.alert button {
+  margin-right: 8px;
+}
+
+.columns {
+  display: flex;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.columns .column {
+  padding: 0px 8px;
+}

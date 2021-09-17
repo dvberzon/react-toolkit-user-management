@@ -6,10 +6,9 @@ function AddGroupButton() {
   const [modalOpen, setModalOpen] = useState(false);
   const closeModal = () => setModalOpen(false)
   return (
-    <>
+    <div className="add-group-button">
       <button
         type="button"
-        className="add-user-button"
         onClick={() => setModalOpen(true)}
       >
         Add Group
@@ -23,7 +22,7 @@ function AddGroupButton() {
           />
         </Modal>
       )}
-    </>
+    </div>
   );
 }
 

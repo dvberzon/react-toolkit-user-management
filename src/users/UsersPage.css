@@ -1,0 +1,14 @@
+ul.users-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.add-user-button {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.add-user-button button {
+  margin-left: auto
+}
