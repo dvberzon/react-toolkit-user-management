@@ -21,7 +21,7 @@ function UserListCard({
         {`${firstName} ${lastName}`}
       </p>
       <p>
-        <a href="mailto:{email}">{email}</a>
+        <a href={`mailto:${email}`}>{email}</a>
       </p>
       </div>
       <div className="groups">
